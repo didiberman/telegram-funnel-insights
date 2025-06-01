@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>" />
+  <title>4 Step Method - Healing Anxiety - Day 3</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="/journey_tracker.js" async></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f9f9f9;
+      overflow-x: hidden;
+      margin: 0;
+    }
+    .video-wrapper {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: 50px auto;
+      text-align: left;
+    }
+    textarea {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .emoji {
+      position: absolute;
+      font-size: 30px;
+      animation: fall linear forwards;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    @keyframes fall {
+      0% { opacity: 1; transform: translateY(-50px) rotate(0deg); }
+      100% { opacity: 0; transform: translateY(100vh) rotate(360deg); }
+    }
+    .wistia_responsive_padding {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+    }
+    .wistia_responsive_wrapper {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+    #successMessageDay3 {
+      display: none;
+      padding: 20px;
+      max-width: 600px;
+      margin: 30px auto;
+      background: #e6ffe6;
+      border: 2px solid #4CAF50;
+      border-radius: 10px;
+      font-size: 16px;
+      color: #333;
+      text-align: center;
+      position: fixed; /* To make it appear on top */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    @media (max-width: 600px) {
+      body { padding: 0 !important; }
+      .wistia_responsive_padding { padding-top: 125% !important; }
+      .wistia_responsive_wrapper, .wistia_embed { height: 100% !important; }
+      #successMessageDay3 { width: 90%; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- legit_visitor cookie is managed by journey_tracker.js or index.html -->
+
+  <div class="video-wrapper">
+    <!-- Placeholder Wistia video for Day 3 - replace placeholder_day3_video_id with actual Day 3 video ID -->
+    <script src="https://fast.wistia.com/embed/medias/placeholder_day3_video_id.jsonp" async></script>
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+    <div class="wistia_responsive_padding">
+      <div class="wistia_responsive_wrapper">
+        <div class="wistia_embed wistia_async_placeholder_day3_video_id videoFoam=true">&nbsp;</div>
+      </div>
+    </div>
+    <script>
+      window._wq = window._wq || [];
+      _wq.push({
+        id: "placeholder_day3_video_id", // Replace with actual Day 3 video ID
+        onReady: function(video) {
+          video.bind("play", function() {
+            const iframe = document.querySelector(".wistia_embed iframe, .wistia_embed video");
+            if (iframe?.requestFullscreen) iframe.requestFullscreen();
+            else if (iframe?.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
+            else if (iframe?.msRequestFullscreen) iframe.msRequestFullscreen();
+          });
+        }
+      });
+    </script>
+  </div>
+
+  <form id="journalFormDay3" onsubmit="submitJournalDay3(event);">
+    <h2>Journaling – Day 3</h2>
+    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+    <!-- Hidden fields will be populated by journey_tracker.js -->
+    <input type="hidden" name="user_tracker_id" id="journal_user_tracker_id_day3">
+    <input type="hidden" name="v_variable" id="journal_v_variable_day3">
+    <input type="hidden" name="email" id="journal_email_day3">
+    <input type="hidden" name="current_day" value="day3">
+
+    <label for="feeling_now">1. How are you feeling in your body right now after these three days?</label><br>
+    <textarea id="feeling_now" name="journal_q1" rows="4" placeholder="e.g., Calmer, still some tension in my shoulders, more aware..."></textarea><br>
+
+    <label for="biggest_shift">2. What has been the biggest shift or realization for you during this 3-day reset?</label><br>
+    <textarea id="biggest_shift" name="journal_q2" rows="4" placeholder="e.g., Understanding my triggers, learning to breathe, feeling my body..."></textarea><br>
+
+    <label for="integration">3. How do you plan to integrate these practices into your daily life moving forward?</label><br>
+    <textarea id="integration" name="journal_q3" rows="4" placeholder="e.g., Morning meditation, mindful moments, specific exercises..."></textarea><br>
+
+    <label for="next_steps">4. What kind of support would be most helpful for you to continue this healing journey?</label><br>
+    <textarea id="next_steps" name="journal_q4" rows="4" placeholder="e.g., Community, further guidance, accountability..."></textarea><br>
+
+    <button type="submit">Finish Day 3 & See Next Steps</button>
+  </form>
+
+  <div id="successMessageDay3">
+    ✅ Journal submitted successfully!<br><br>
+    Amazing work completing the 3-Day Reset! You are on a powerful path.<br><br>
+    You will be redirected shortly. If not, <a href="/thank_you_final.html">click here</a>. <span id="countdownDay3">5</span> 🌿✨
+  </div>
+
+  <script>
+    async function submitJournalDay3(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      const q1 = document.getElementById("feeling_now").value.trim();
+      const q2 = document.getElementById("biggest_shift").value.trim();
+      const q3 = document.getElementById("integration").value.trim();
+      const q4 = document.getElementById("next_steps").value.trim();
+      
+      if (!q1 || !q2 || !q3) { // Example: require first 3 questions
+        alert("⚠️ Please fill out at least the first three questions before continuing.");
+        return;
+      }
+
+      // 1. Generate and save PDF (client-side)
+      doc.setFont("Helvetica", "bold");
+      doc.setFontSize(18);
+      doc.text("Healing Anxiety Journal - Day 3", 105, 20, null, null, "center");
+      doc.setFont("Helvetica", "normal");
+      doc.setFontSize(12);
+      let y = 40;
+      function addQuestion(question, answer) {
+        if (y > 270) { doc.addPage(); y = 20; }
+        doc.setFont("Helvetica", "bold");
+        doc.text(question, 10, y); y += 8;
+        doc.setFont("Helvetica", "normal");
+        let splitText = doc.splitTextToSize(answer || "-", 180);
+        doc.text(splitText, 10, y); y += splitText.length * 8 + 10;
+      }
+      addQuestion("1. How are you feeling in your body right now after these three days?", q1);
+      addQuestion("2. What has been the biggest shift or realization for you during this 3-day reset?", q2);
+      addQuestion("3. How do you plan to integrate these practices into your daily life moving forward?", q3);
+      addQuestion("4. What kind of support would be most helpful for you to continue this healing journey?", q4);
+      doc.save("Healing_Anxiety_Journal_Day3.pdf");
+
+      // 2. Prepare form data for AJAX submission
+      const form = document.getElementById("journalFormDay3");
+      const formData = new FormData(form);
+      // journey_tracker.js should have populated hidden fields: user_tracker_id, v_variable, email
+      // current_day is already a hidden field with value "day3"
+
+      // 3. Submit data to backend via AJAX
+      try {
+        const response = await fetch("submit_journal.php", {
+          method: "POST",
+          body: formData,
+        });
+        const result = await response.json();
+
+        if (result.success) {
+          document.getElementById("successMessageDay3").style.display = "block";
+          triggerConfettiDay3(); 
+          let seconds = 5;
+          const countdownEl = document.getElementById("countdownDay3");
+          countdownEl.textContent = seconds;
+          const interval = setInterval(() => {
+            seconds--;
+            countdownEl.textContent = seconds;
+            if (seconds === 0) {
+              clearInterval(interval);
+              if (result.next_page) {
+                window.location.href = result.next_page; // Should be thank_you_final.html
+              } else {
+                alert("Thank you for completing the course!"); 
+              }
+            }
+          }, 1000);
+        } else {
+          alert("Error submitting journal: " + (result.message || "Unknown error"));
+        }
+      } catch (error) {
+        console.error("Error submitting journal Day 3:", error);
+        alert("An error occurred while submitting your journal. Please try again.");
+      }
+    }
+
+    function triggerConfettiDay3() {
+      const emojis = ["🌿", "✨", "🌸", "🧘‍♂️", "🌞", "🪷", "🍃"];
+      for (let i = 0; i < 40; i++) {
+        const emoji = document.createElement("div");
+        emoji.className = "emoji";
+        emoji.style.left = Math.random() * 100 + "vw";
+        emoji.style.top = "-50px";
+        emoji.style.animationDuration = (2 + Math.random() * 3) + "s";
+        emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+        document.body.appendChild(emoji);
+        setTimeout(() => emoji.remove(), 5000);
+      }
+    }
+    // Initial page load logic (setting cookies, calling update_journey.php) is handled by journey_tracker.js
+  </script>
+</body>
+</html>
+
