@@ -1,9 +1,11 @@
 <?php
 // remindertg.php - Without Markdown parsing to avoid formatting issues
 
-$telegram_token   = "8125599242:AAGLFxszOwUkIOLTGV0bBPYod5b9wXAbSbs";
-$telegram_chat_id = "614587329";
-$webhook_secret   = "thisismypassword";
+require_once 'config.php';
+
+$telegram_token   = TELEGRAM_BOT_TOKEN;
+$telegram_chat_id = "YOUR_CHAT_ID";
+$webhook_secret   = WEBHOOK_SECRET;
 $log_file         = 'remindertg_log.txt';
 
 function logWebhookEvent($message) {

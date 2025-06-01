@@ -1,7 +1,10 @@
 <?php
+
+require_once 'config.php';
+
 // === CONFIG ===
-$telegramBotToken = '8125599242:AAGLFxszOwUkIOLTGV0bBPYod5b9wXAbSbs';
-$telegramChatId = '614587329';
+$telegramBotToken = TELEGRAM_BOT_TOKEN;
+$telegramChatId = 'YOUR_CHAT_ID';
 
 // === GET USER INFO ===
 $ip        = $_SERVER['REMOTE_ADDR'] ?? 'Unknown IP';

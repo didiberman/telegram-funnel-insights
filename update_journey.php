@@ -1,11 +1,13 @@
 <?php
 // update_journey.php (Modified for simplified status system, RELATIVE PATHS, and IMPROVED TELEGRAM NOTIFICATIONS)
 
+require_once 'config.php';
+
 // CONFIGURATION
 $log_file         = 'journey_log.txt'; // RELATIVE PATH
 $db_path          = 'journey_data.sqlite'; // RELATIVE PATH, Path to SQLite database
-$telegram_token   = "8125599242:AAGLFxszOwUkIOLTGV0bBPYod5b9wXAbSbs";
-$telegram_chat_id = "614587329";
+$telegram_token   = TELEGRAM_BOT_TOKEN;
+$telegram_chat_id = "YOUR_CHAT_ID";
 
 // --- HELPER FUNCTIONS ---
 function log_journey_update_event($msg) {

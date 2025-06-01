@@ -1,10 +1,12 @@
 <?php
 // submit_journal.php (Modified to properly update journey status for all users)
 
+require_once 'config.php';
+
 // CONFIGURATION
-$mailerlite_api_key = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZGNmMDk1NmJkNzY5MmMzNWVmYzNjNjY3MzA2MTZjMGJjMWZjMmUwYjQ3OGVmNTZlNmQ2YWQ3NzIwYTMxYzFjMWRmMzdkYzJlZjYzMmQ0NzgiLCJpYXQiOjE3NDQ1MTUzODAuNjUzOTA2LCJuYmYiOjE3NDQ1MTUzODAuNjUzOTA5LCJleHAiOjQ5MDAxODg5ODAuNjUwMjAzLCJzdWIiOiIxNDU5MjMxIiwic2NvcGVzIjpbXX0.iAh78aPcvi97W3io434hho3HtWljX0BKLNwhNT2M7dB0M6np11mxNTLMXXNQC3HondoXD0T6YVN5LS5yUJwBx1FIECNvyyCLqgjoZ_1zEyvGDu5I5xDG_j-lT_1cNr1mDoa58h2cGe8-BpggesOUZ8gBGap3t3mGFWXarxzL8sAHQ932DhGSTLnO2xbnYV3jnk_4FDilIgI7tsqFqnE5lp6OXZbeTG2nvsTzufODkZhkoLMDLK9uTnT1FV54nm3ACbaryxB1MHEjiZDmSw-97JxRa1gF6r6OxRUDHs0XrMgUyy_wfLskNBEDD0MUv9GKg0Vas7WF8G2Ainsjxzv4hz98maq5oWjx0qbfoq8kgLOPfsf_AKzdngpUyaiJx5HYw956FfsS2H99fbk3XZaI_vzSGse1gsYJdx22uNArFCYOk_b-91yToiTK7See_JsSs8MNrbUk2PnALFoeobs4ZX0OntWplWRuIqWN_Mq6diSR8nZVRgBV_SvSSTYvRJmS16QtugwkUS8WB3G8v0BJ5mTcI_xez4GqqvVnb8p14TZnzcaNGSZKMg-vWX1PQmD4DxzZq5ZNdpY28Jm2uDnhohfX10hTcHZNRIbQmTbhWjjECAXJQavqGLUcfWOmTh9zjBlsNVhfgQ7ppwNkZZ9oEx0FV_LgwhXBwfjF2Vm3zao";
-$telegram_token   = "8125599242:AAGLFxszOwUkIOLTGV0bBPYod5b9wXAbSbs";
-$telegram_chat_id = "614587329";
+$mailerlite_api_key = MAILERLITE_API_KEY;
+$telegram_token   = "YOUR_TELEGRAM_TOKEN"
+$telegram_chat_id = "YOUR_TELEGRAM_CHAT_ID";
 $log_file         = 'journey_log.txt'; // RELATIVE PATH
 $db_path          = 'journey_data.sqlite'; // RELATIVE PATH
 $deduplication_window_seconds = 300; // 5 minutes
